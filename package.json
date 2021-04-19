@@ -1,0 +1,12 @@
+{
+    "name": "Hello World",
+    "version": "1.0.0",
+    "description": "",
+    "main": "hello.js",
+    "scripts": {
+        "test": "echo Error",
+        "start": "node hello.js"
+    },
+    "author": "Yan Naing Htun",
+    "license": "ISC"
+}
