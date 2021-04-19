@@ -14,6 +14,6 @@ io.on("connection", (socket) => {
 app.get("/", function(req, res) {
     res.sendFile(__dirname + "/home.html");
 });
-server.listen(process.env.PORT, "127.0.0.1", function() {
+server.listen(process.env.PORT, "0.0.0.0", function() {
     console.log("Listening..");
 });
