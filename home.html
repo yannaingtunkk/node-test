@@ -4,11 +4,47 @@
     <script src="/socket.io/socket.io.js"></script>
     <script>
         var socket = io();
+        socket.on("chat", (msg) => {
+            var p = document.createElement("p");
+            console.log(msg);
+            p.innerHTML = msg;
+            p.style.fontSize = "20px";
+            document.getElementById("center").appendChild(p);
+
+        });
+
+        function send() {
+            console.log("Sending");
+            var m = document.getElementById("msg").value;
+            var n = document.getElementById("name").value;
+            socket.emit("chat", "<b>" + n + "  =>  " + "<br/>" + m);
+        }
     </script>
+    <style>
+        #center {
+            padding: 15px;
+            width: 400px;
+            border-radius: 16px;
+            background-color: #effaf0;
+        }
+        
+        #wrapper {
+            width: 400px;
+            margin: auto;
+        }
+    </style>
 </head>
 
 <body>
     <h1 align="center">Yan Naing Htun</h1>
+    <div id="wrapper">
+        <div id="center">
+        </div>
+        <br/>
+        <input type="text" placeholder="Name: " id="name" />
+        <input type="text" id="msg" /><button onclick="send()">Send</button>
+    </div>
+
 </body>
 
 </html>
