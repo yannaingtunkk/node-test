@@ -4,7 +4,7 @@
     "description": "",
     "main": "hello.js",
     "scripts": {
-        "test": "echo Error",
+        "test": "node hello.js",
         "start": "node hello.js"
     },
     "author": "Yan Naing Htun",
